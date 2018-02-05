@@ -1,41 +1,41 @@
-clc
-clear all
-close all
+% clc
+% clear all
+% close all
+% 
+% s = serial('COM4');
+% fopen(s);
+% fprintf(s,'RS232?')
+% settings = fgets(s)
+% data = ['..................................'];
+% 
+% while(true)
+%      settings = fgets(s);
+%      A = size(settings);
+%      if(settings(1) == 'S')
+%      else
+%          if(A(2) ~= 34)
+%              if(A(2) == 33)
+%                 settings = strcat(settings, '...');
+%              elseif(A(2) == 32)
+%                 settings = strcat(settings, '....');
+%              elseif(A(2) == 31)
+%                 settings = strcat(settings, '.....');
+%              end  
+%             data = [settings; data];
+%          else
+%             data = [settings; data];
+%          end
+%      end
+% end
 
-s = serial('COM4');
-fopen(s);
-fprintf(s,'RS232?')
-settings = fgets(s)
-data = ['..................................'];
+expression = '[1234567890]+';
+[startIndex,endIndex] = regexp(string(data),expression);
 
-while(true)
-     settings = fgets(s);
-     A = size(settings);
-     if(settings(1) == 'S')
-     else
-         if(A(2) ~= 34)
-             if(A(2) == 33)
-                settings = strcat(settings, '...');
-             elseif(A(2) == 32)
-                settings = strcat(settings, '....');
-             elseif(A(2) == 31)
-                settings = strcat(settings, '.....');
-             end  
-            data = [settings; data];
-         else
-            data = [settings; data];
-         end
-     end
-end
-
-% expression = '[1234567890]+';
-% [startIndex,endIndex] = regexp(string(data),expression);
-
-fclose(s)
-delete(s)
-clear s
-
-newobjs = instrfind; fclose(newobjs); clear newobjs
+% fclose(s)
+% delete(s)
+% clear s
+% 
+% newobjs = instrfind; fclose(newobjs); clear newobjs
 
 % degrees = [0, 15, 30, 45, 60, 75];
 % obstacleHeights = [4; 6; 8; 10; 12; 15];
@@ -63,3 +63,7 @@ newobjs = instrfind; fclose(newobjs); clear newobjs
 % ylabel('Measured (cm)')
 % 
 % title('Measured Drop-off Distance Accuracy')
+
+for i = 1:length(data)
+    realData(i) = str2double(data(i, 11:12));
+end

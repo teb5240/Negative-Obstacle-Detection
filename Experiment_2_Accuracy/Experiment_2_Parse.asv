@@ -1,0 +1,10 @@
+% Parse Saved Data from Saved Run
+
+expression = '[1234567890]+';
+[startIndex,endIndex] = regexp(string(data),expression);
+
+for i = 1:length(data)
+    start = startIndex{i, 1}(1);
+    ending = endIndex{i, 1}(1);
+    realData(i) = str2double(data(i, start:ending));
+end

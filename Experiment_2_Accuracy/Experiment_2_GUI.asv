@@ -69,12 +69,13 @@ varargout{1} = handles.output;
 
 function start_Callback(hObject, eventdata, handles)
 
-global go pausePlz count pauseCount
+global go pausePlz count pauseCount pauseIndex
 
 go = 1; 
 count = 0;
 pausePlz = 0;
 pauseCount = 0;
+pauseIndex = [];
 
 delete(instrfindall)
 
@@ -125,7 +126,7 @@ clear newobjs
 % --- Executes on button press in pauseButton.
 function pauseButton_Callback(hObject, eventdata, handles)
 
-global pausePlz count pauseCount
+global pausePlz count pauseCount pauseIndex
 
 pausePlz = ~pausePlz;
 pauseCount = pauseCount + 1;
