@@ -101,8 +101,7 @@ while(go)
      pause(.01)
 end
 
-save('Obs_14cm_Ang_0', 'data')
-
+save('Test', 'data')
 
 function stop_Callback(hObject, eventdata, handles)
 
