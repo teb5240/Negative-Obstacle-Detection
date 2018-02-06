@@ -43,7 +43,7 @@ hold on
 xlabel('Obstacle Depth (cm)')
 ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
-Title = 'Obstacle Detection Accuracy'
+title('Obstacle Detection Accuracy')
 
 subplot(2,4,3, 'Parent', p)
 h3 = plot(obstacleHeights, correct(:,3), 'o', 'color', colors(3,:))
