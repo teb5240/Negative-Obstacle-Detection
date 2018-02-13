@@ -56,7 +56,7 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 
-newobjs = instrfind; fclose(newobjs); clear newobjs
+% newobjs = instrfind; fclose(newobjs); clear newobjs
 
 function varargout = Experiment_2_GUI_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
@@ -101,7 +101,7 @@ while(go)
      pause(.01)
 end
 
-save('Obs_12cm_Ang_15_SECONDRUN', 'data')
+save('75_Deg_String', 'data')
 
 function stop_Callback(hObject, eventdata, handles)
 
