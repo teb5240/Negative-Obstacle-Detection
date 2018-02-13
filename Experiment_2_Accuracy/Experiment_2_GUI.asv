@@ -69,12 +69,13 @@ varargout{1} = handles.output;
 
 function start_Callback(hObject, eventdata, handles)
 
-global go pausePlz count pauseCount
+global go pausePlz count pauseCount pauseIndex
 
 go = 1; 
 count = 0;
 pausePlz = 0;
 pauseCount = 0;
+pauseIndex = [];
 
 delete(instrfindall)
 
@@ -110,16 +111,6 @@ while(go)
     pause(.01)
 end
 
-<<<<<<< HEAD
-save('Obs_12cm_Ang_15_SECONDRUN', 'data')
-=======
-<<<<<<< HEAD
-=======
-save('Obs_14cm_Ang_0', 'data')
-
->>>>>>> f2dcdb26e320ff23442c65d7fe79dc0adc15ed93
-
->>>>>>> 35bb4990bf48eb9ea8e0fcaa6a400a223c18f7f2
 function stop_Callback(hObject, eventdata, handles)
 
 global go 
@@ -135,7 +126,7 @@ clear newobjs
 % --- Executes on button press in pauseButton.
 function pauseButton_Callback(hObject, eventdata, handles)
 
-global pausePlz count pauseCount
+global pausePlz count pauseCount pauseIndex
 
 pausePlz = ~pausePlz;
 pauseCount = pauseCount + 1;
