@@ -51,10 +51,10 @@ end
 x = 4:2:14;
 
 subplot(1,2,1, 'Parent', p)
-h4 = plot(obstacleHeights, measuredHeights(:,2), 'o', 'color', colors(2,:));
+h4 = plot(obstacleHeights, measuredHeights(2, :), 'o', 'color', colors(2,:));
 hold on
-plot(obstacleHeights, measuredHeights(:,2) + (2 * measuredSTD(:,2)), '.', 'color', colors(2,:));
-plot(obstacleHeights, measuredHeights(:,2) - (2 * measuredSTD(:,2)), '.', 'color', colors(2,:));
+plot(obstacleHeights, measuredHeights(2, :) + (2 * measuredSTD(2, :)), '.', 'color', colors(2,:));
+plot(obstacleHeights, measuredHeights(2, :) - (2 * measuredSTD(2, :)), '.', 'color', colors(2,:));
 % reg = fitlm(obstacleHeights, measuredHeights(:,4));
 % x = 0:1:14;
 % y = reg.Coefficients.Estimate(2)*x + reg.Coefficients.Estimate(1);
@@ -67,13 +67,11 @@ xlabel('Obstacle Depth (cm)')
 ylabel('Measured Distance (cm)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 30])
-title('Distance Accuracy Original Run at 15^{\circ}');
-
 subplot(1,2,2, 'Parent', p)
-h4 = plot(obstacleHeights2, measuredHeights2(:,2), 'o', 'color', colors(2,:));
+h4 = plot(obstacleHeights2, measuredHeights2(2, :), 'o', 'color', colors(2,:));
 hold on
-plot(obstacleHeights2, measuredHeights2(:,2) + (2 * measuredSTD2(:,2)), '.', 'color', colors(2,:));
-plot(obstacleHeights2, measuredHeights2(:,2) - (2 * measuredSTD2(:,2)), '.', 'color', colors(2,:));
+plot(obstacleHeights2, measuredHeights2(2, :) + (2 * measuredSTD2(2, :)), '.', 'color', colors(2,:));
+plot(obstacleHeights2, measuredHeights2(2, :) - (2 * measuredSTD2(2, :)), '.', 'color', colors(2,:));
 % reg = fitlm(obstacleHeights, measuredHeights(:,4));
 % x = 0:1:14;
 % y = reg.Coefficients.Estimate(2)*x + reg.Coefficients.Estimate(1);
@@ -86,4 +84,3 @@ xlabel('Obstacle Depth (cm)')
 ylabel('Measured Distance (cm)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 30])
-title('Distance Accuracy Re-run at 15^{\circ}');
