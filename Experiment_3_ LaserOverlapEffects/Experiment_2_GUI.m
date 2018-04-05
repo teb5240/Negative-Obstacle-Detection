@@ -22,7 +22,7 @@ function varargout = Experiment_2_GUI(varargin)
 
 % Edit the above text to modify the response to help Experiment_2_GUI
 
-% Last Modified by GUIDE v2.5 04-Feb-2018 19:24:22
+% Last Modified by GUIDE v2.5 16-Jan-2018 01:25:52
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -69,16 +69,11 @@ varargout{1} = handles.output;
 
 function start_Callback(hObject, eventdata, handles)
 
-global go pausePlz count pauseCount
+global go
 
-go = 1; 
-count = 0;
-pausePlz = 0;
-pauseCount = 0;
+go = 1;
 
-delete(instrfindall)
-
-s = serial('COM10');
+s = serial('COM4');
 fopen(s);
 fprintf(s,'RS232?')
 settings = fgets(s)
@@ -86,58 +81,34 @@ data = ['..................................'];
 pause(1)
 
 while(go)
-    if ~pausePlz
-         settings = fgets(s)
-        
-        count = count + 1;
-         A = size(settings);
-         if(settings(1:8) ~= 'distance')
+     settings = fgets(s)
+     A = size(settings);
+     if(settings(1:8) ~= 'distance')
+     else
+         if(A(2) ~= 34)
+             if(A(2) == 33)
+                settings = strcat(settings, '...');
+             elseif(A(2) == 32)
+                settings = strcat(settings, '....');
+             elseif(A(2) == 31)
+                settings = strcat(settings, '.....');
+             end  
+            data = [settings; data];
          else
-             if(A(2) ~= 34)
-                 if(A(2) == 33)
-                    settings = strcat(settings, '...');
-                 elseif(A(2) == 32)
-                    settings = strcat(settings, '....');
-                 elseif(A(2) == 31)
-                    settings = strcat(settings, '.....');
-                 end  
-                data = [settings; data];
-             else
-                data = [settings; data];
-             end
+            data = [settings; data];
          end
-    end
-    pause(.01)
+     end
+     pause(.01)
 end
 
-<<<<<<< HEAD
-save('Obs_12cm_Ang_15_SECONDRUN', 'data')
-=======
-<<<<<<< HEAD
-=======
-save('Obs_14cm_Ang_0', 'data')
+save('75_Deg_String', 'data')
 
->>>>>>> f2dcdb26e320ff23442c65d7fe79dc0adc15ed93
-
->>>>>>> 35bb4990bf48eb9ea8e0fcaa6a400a223c18f7f2
 function stop_Callback(hObject, eventdata, handles)
 
 global go 
 
 go = 0;
 
-save('Test', 'data')
-
 newobjs = instrfind; 
 fclose(newobjs); 
 clear newobjs
-
-% --- Executes on button press in pauseButton.
-function pauseButton_Callback(hObject, eventdata, handles)
-
-global pausePlz count pauseCount
-
-pausePlz = ~pausePlz;
-pauseCount = pauseCount + 1;
-
-pauseIndex(pauseCount) = count;

@@ -1,0 +1,29 @@
+% TESTING STUFF NEW PLOT
+
+plot(length(distanceListTESTINGSTUFF):-1:1, distanceListTESTINGSTUFF, 'black')
+section = (length(distanceListTESTINGSTUFF) + 100)/9;
+hold on
+
+% when the paper towel was not there
+bar([0, 2 * section, ...
+    4 * section, ...
+    6 * section, ...
+    8 * section],[40, 40, 40, 40, 40], .02, 'FaceColor', 'r', 'EdgeColor', 'r');
+title('Altered Environment Sensor Characterization')
+
+% when the paper towel was not there
+% bar([section, ...
+%     3 * section + 50, ...
+%     5 * section, ...
+%     7 * section + 15], [40, 40, 40, 40], .02, 'FaceColor', [.7 .7 .7], 'EdgeColor', [.7 .7 .7]);
+
+xticks([section, 2 * section, ...
+    3 * section, 4 * section, ...
+    5 * section, 6 * section, ...
+    7 * section, 8 * section])
+xticklabels([10, 20, 30, 40, 50, 60, 70, 80])
+xlabel('Time (sec)')
+ylabel('Measured Distance (cm)')
+
+legend('Measured Distance (cm)', 'Approximate Switch to Paper Towel Surface', 'Approximate Switch to Hardwood Floor Surface')
+xlim([0, length(distanceListTESTINGSTUFF)])
