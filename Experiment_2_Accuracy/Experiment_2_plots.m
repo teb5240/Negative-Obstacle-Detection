@@ -1,16 +1,10 @@
-<<<<<<< HEAD
-% clc
-% clear all
-% close all
-% 
-=======
->>>>>>> 35bb4990bf48eb9ea8e0fcaa6a400a223c18f7f2
+
 % s = serial('COM4');
 % fopen(s);
 % fprintf(s,'RS232?')
 % settings = fgets(s)
 % data = ['..................................'];
-<<<<<<< HEAD
+
 % 
 % while(true)
 %      settings = fgets(s);
@@ -50,8 +44,7 @@ expression = '[1234567890]+';
 %                     12, 12, 12, 12, 12, 17;...
 %                     14, 14, 14, 14, 14, 20;...
 %                                         ];
-=======
->>>>>>> 35bb4990bf48eb9ea8e0fcaa6a400a223c18f7f2
+
 % 
 % while(true)
 %      settings = fgets(s);
@@ -76,13 +69,12 @@ expression = '[1234567890]+';
 % % expression = '[1234567890]+';
 % % [startIndex,endIndex] = regexp(string(data),expression);
 % 
-<<<<<<< HEAD
 % title('Measured Drop-off Distance Accuracy')
 
-for i = 1:length(data)
-    realData(i) = str2double(data(i, 11:12));
-end
-=======
+% for i = 1:length(data)
+%     realData(i) = str2double(data(i, 11:12));
+% end
+
 % fclose(s)
 % delete(s)
 % clear s
@@ -117,4 +109,4 @@ xlabel('Actual (cm)')
 ylabel('Measured (cm)')
 
 title('Measured Drop-off Distance Accuracy')
->>>>>>> 35bb4990bf48eb9ea8e0fcaa6a400a223c18f7f2
+

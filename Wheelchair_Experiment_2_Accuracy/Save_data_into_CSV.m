@@ -25,3 +25,14 @@ totalOnes = sum(detection(:) == 1);
 
 detections = sum(detection, 1);
 plot(detected, 'o');
+obstacle = [3, 5, 7.5, 9.5, 11.4, 13.4]
+vector = [20, 70, 100, 90, 100, 100]
+
+figure(4); whitebg('white'); hold off; 
+set(gcf,'color',[1 1 1]);
+
+set(gca,'FontName','Times','FontSize',8); 
+plot(obstacle, vector, 'ko')
+xlabel('Obstacle Depth (cm)')
+ylabel('Accuracy (%)')
+set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);

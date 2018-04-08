@@ -10,6 +10,7 @@ p = uipanel('Parent',f,'BorderType','none');
 p.TitlePosition = 'centertop'; 
 p.FontSize = 12;
 p.FontWeight = 'bold';
+p.BackgroundColor = [1, 1, 1];
 
 degrees = [0, 15, 30, 45, 60, 75];
 obstacleHeights = [4; 6; 8; 10; 12; 14];
@@ -49,6 +50,7 @@ ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,2, 'Parent', p)
 h2 = plot(obstacleHeights, correct(:,2), 'o', 'color', colors(2,:))
@@ -63,6 +65,7 @@ set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 % title('Obstacle Detection Accuracy')
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,3, 'Parent', p)
 h3 = plot(obstacleHeights, correct(:,3), 'o', 'color', colors(3,:))
@@ -76,6 +79,7 @@ ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,5, 'Parent', p)
 h4 = plot(obstacleHeights, correct(:,4), 'o', 'color', colors(4,:))
@@ -89,6 +93,7 @@ ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,6, 'Parent', p)
 h5 = plot(obstacleHeights, correct(:,5), 'o', 'color', colors(5,:))
@@ -101,6 +106,7 @@ xlabel('Obstacle Depth (cm)')
 ylabel('Accuracy (%)')
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,7, 'Parent', p)
 h6 = plot(obstacleHeights, correct(:,6), 'o', 'color', colors(6,:))
@@ -113,6 +119,7 @@ xlabel('Obstacle Depth (cm)')
 ylabel('Accuracy (%)')
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 
@@ -127,6 +134,7 @@ lgd = legend(hL,[h1;h2;h3;h4;h5;h6], '0^{\circ}', '15^{\circ}', '30^{\circ}', '4
 set(lgd,'position', [0.7, 0.1100, 0.15, 0.8150]);      % Adjusting legend's position
 axis(hL,'off');                 % Turning its axis off
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,1, 'Parent', p)
 plot(obstacleHeights, correct2(:,1), '*', 'color', colors(1,:))
@@ -140,6 +148,7 @@ ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,2, 'Parent', p)
 plot(obstacleHeights, correct2(:,2), '*', 'color', colors(2,:))
@@ -154,6 +163,7 @@ set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 % title('Obstacle Detection Accuracy')
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,3, 'Parent', p)
 plot(obstacleHeights, correct2(:,3), '*', 'color', colors(3,:))
@@ -167,6 +177,7 @@ ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,5, 'Parent', p)
 plot(obstacleHeights, correct2(:,4), '*', 'color', colors(4,:))
@@ -180,6 +191,7 @@ ylabel('Accuracy (%)')
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
 
 subplot(2,4,6, 'Parent', p)
 plot(obstacleHeights, correct2(:,5), '*', 'color', colors(5,:))
@@ -192,6 +204,9 @@ xlabel('Obstacle Depth (cm)')
 ylabel('Accuracy (%)')
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
+set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
+
 
 subplot(2,4,7, 'Parent', p)
 plot(obstacleHeights, correct2(:,6), '*', 'color', colors(6,:))
@@ -204,3 +219,5 @@ xlabel('Obstacle Depth (cm)')
 ylabel('Accuracy (%)')
 ylim([0 100])
 xlim([4 14])
+% set(gca,'FontName','Times','FontSize',8); 
+set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
